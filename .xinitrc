@@ -39,19 +39,20 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 if [ -n "$failsafe" ]; then
+    rm -f ~/.serverauth.*
     xhost + inet:10.0.0.1
     dbus-daemon --session --address=unix:path=/home/deep/.dbus/session-bus &
     export DBUS_SESSION_BUS_ADDRESS="unix:path=/home/deep/.dbus/session-bus"
-    export DBUS_SESSION_BUS_PID="$(pgrep dbus-daemon)"
-    feh --bg-fill ~/Bilder/background.jpg &
+    export DBUS_SESSION_BUS_PID=$(pgrep dbus-daemon)
+    feh --no-fehbg --bg-fill ~/Bilder/background.jpg &
     picom --xrender-sync-fence &
     dunst &
-    pipewire &
-    pipewire-media-session &
+    pulseaudio --start -D &
     ~/.config/polybar/launch-bar.sh &
     setxkbmap de
     pgrep -x sxhkd > /dev/null || sxhkd &
     exec bspwm
+    #exec dbus-launch --exit-with-session bspwm
 else
     exec $command
 fi

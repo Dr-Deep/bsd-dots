@@ -9,9 +9,9 @@ super + Return
 super + @space
 	bash -c 'source /home/deep/.bashrc && dmenu_run -i'
 
-# Rofi
-super + r
-	rofi -show drun
+# File-Manager
+super + p
+	pcmanfm
 
 # make sxhkd reload its configuration files:
 super + shift + c
@@ -19,9 +19,11 @@ super + shift + c
 
 # Volume settings
 XF86AudioRaiseVolume
+	notify-send volume raise
 	pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 XF86AudioLowerVolume
+	notify-send volume lower
 	pactl set-sink-volume @DEFAULT_SINK@ -5%
 
 XF86AudioMute

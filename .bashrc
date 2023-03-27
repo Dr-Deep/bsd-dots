@@ -9,6 +9,10 @@ PS1='\[\e[0m\]┌─\[\e[0m\][\[\e[0m\]\u\[\e[0m\]@\[\e[0m\]\h\[\e[0m\]]\[\e[0m\
 export PATH=$HOME/.local/bin:$PATH
 export EDITOR="nano"     # $EDITOR use Nano in terminal
 
+# PS4 Toolchain
+export OO_PS4_TOOLCHAIN='/home/deep/Workspace/Projekte/PS4/OpenOrbis-PS4-Toolchain'
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 # for error: 'Couldn't find a valid ICU package installed on the system.'
+
 # bash completion
 source /usr/local/share/bash-completion/bash_completion.sh 
 
@@ -68,9 +72,9 @@ alias ls='ls --color=auto -rthla'
 
 
 # confirm before overwriting something
-alias cp="cp -i"
-alias mv='mv -i'
-alias rm='rm -i'
+alias cp="cp -iv"
+alias mv='mv -iv'
+alias rm='rm -iv'
 
 
 # adding flags

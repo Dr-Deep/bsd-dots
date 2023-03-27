@@ -6,4 +6,4 @@ if [[ -f ~/.bashrc ]] ; then
 fi
 
 # start X
-pgrep -x X > /dev/null || startx -- -listen tcp
+pgrep -x X > /dev/null || exec startx -- -listen tcp
