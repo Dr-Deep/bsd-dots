@@ -44,7 +44,8 @@ if [ -n "$failsafe" ]; then
     dbus-daemon --session --address=unix:path=/home/deep/.dbus/session-bus &
     export DBUS_SESSION_BUS_ADDRESS="unix:path=/home/deep/.dbus/session-bus"
     export DBUS_SESSION_BUS_PID=$(pgrep dbus-daemon)
-    feh --no-fehbg --bg-fill ~/Bilder/background.jpg &
+    feh --no-fehbg --bg-fill ~/Bilder/doom.jpg &
+    redshift-gtk -l 49.99263603340074:8.661850703160189 -t  6500:4500 &
     picom --xrender-sync-fence &
     dunst &
     pulseaudio --start -D &

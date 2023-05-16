@@ -77,9 +77,10 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 
-# adding flags
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+# print human-readable
+alias du='du -hc'
+alias df='df -h'
+alias free='free -m'
 
 
 # ps
