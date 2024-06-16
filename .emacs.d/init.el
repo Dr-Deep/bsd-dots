@@ -83,27 +83,7 @@
 ;; END PACKAGE SOURCES END
 ;;
 
-(use-package eglot
-  :hook ((go-mode . eglot-ensure))
-  )
-
-(use-package rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-
-(use-package hydra
-  :defer t
-  )
-
-(defhydra hydra-text-scale (:timeout 4)
-  "scale text"
-  ("j" text-scale-increase "in")
-  ("k" text-scale-decrease "out")
-  ("f" nil "finished" :exit t))
-
 ;; Theme
-;;(use-package flatland-black-theme)
-;;(use-package kosmos-theme)
-;;(load-theme 'kosmos-theme)
 (use-package doom-themes
   :config
   (load-theme 'doom-acario-dark t)
@@ -115,11 +95,48 @@
   (face-remap-add-relative 'mode-line :background "#0D0D0D")
 
   ;; Line-Numbers
+  ;;  (line-number              (:foreground gruvbox-dark2 :background gruvbox-dark0))
+  ;;  (line-number-current-line (:foreground gruvbox-faded_yellow :background gruvbox-dark0_soft))
   )
 
-;;  (line-number              (:foreground gruvbox-dark2 :background gruvbox-dark0))
-;;  (line-number-current-line (:foreground gruvbox-faded_yellow :background gruvbox-dark0_soft))
+(use-package eglot
+  :config
+  (add-hook 'prog-mode-hook 'eglot-ensure)
+  )
 
+(use-package company
+  :config
+  (add-hook 'prog-mode-hook 'company-mode)
+  )
+
+(use-package go-mode
+  :config
+  (autoload 'go-mode "go-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+  (add-hook 'before-save-hook 'eglot-format-buffer)
+  )
+
+;;    With autocomplete-mode: go-autocomplete
+;;    Standalone completion: go-complete
+
+;; Treemacs
+;;treemacs-projectile
+;;(use-package treemacs
+;;  :ensure t
+;;  :defer t
+;;  )
+
+;;(use-package treemacs-projectile
+;;  :after (treemacs projectile)
+;;  :ensure t
+;;)
+
+(use-package rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+(use-package hydra
+  :defer t
+  )
 
 ;; Doom modeline
 (use-package doom-modeline
@@ -130,10 +147,6 @@
   (setq doom-modeline-height 15)
   )
 
-
-(use-package fira-code-mode
-  :config (global-fira-code-mode)
-  )
 
 
 
