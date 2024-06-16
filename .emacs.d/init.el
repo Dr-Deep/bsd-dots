@@ -46,6 +46,7 @@
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+			 ("melpa-stable" . "https://stable.melpa.org/packages/")
 			 ("org" . "https://orgmode.org/elpa")
 			 ("elpa" . "https://elpa.gnu.org/packages/")
 			 ))
@@ -99,6 +100,15 @@
   ;;  (line-number-current-line (:foreground gruvbox-faded_yellow :background gruvbox-dark0_soft))
   )
 
+(use-package all-the-icons
+  :if (display-graphic-p)
+  )
+
+(use-package fira-code-mode
+  :config
+  (global-fira-code-mode)
+  )
+
 (use-package eglot
   :config
   (add-hook 'prog-mode-hook 'eglot-ensure)
@@ -120,16 +130,27 @@
 ;;    Standalone completion: go-complete
 
 ;; Treemacs
-;;treemacs-projectile
-;;(use-package treemacs
-;;  :ensure t
-;;  :defer t
-;;  )
+(use-package treemacs
+  :ensure t
+  :defer t
+  :hook  (emacs-startup . treemacs)
+  )
 
-;;(use-package treemacs-projectile
-;;  :after (treemacs projectile)
-;;  :ensure t
-;;)
+(use-package treemacs-nerd-icons
+  :after treemacs
+  :config
+  (treemacs-load-theme "nerd-icons")
+  )
+
+(use-package projectile
+  :config
+  (add-hook 'prog-mode-hook 'projectile-mode)
+  )
+
+(use-package treemacs-projectile
+  :after (treemacs projectile)
+  :ensure t
+)
 
 (use-package rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -146,6 +167,15 @@
   :config
   (setq doom-modeline-height 15)
   )
+
+;; Custom Startpage
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner '4)
+  )
+
 
 
 
