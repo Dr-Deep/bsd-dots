@@ -6,18 +6,22 @@ PS1='\[\e[0m\]┌─\[\e[0m\][\[\e[0m\]\u\[\e[0m\]@\[\e[0m\]\h\[\e[0m\]]\[\e[0m\
 # Terminal issues with SSH
 [ "$TERM" = "xterm-kitty" ] && alias ssh="TERM='xterm' ssh"
 
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH # /usr/local/plan9/bin to your PATH. aber ohne freebsd zeugs nur /usr/local
 export EDITOR="nano"     # $EDITOR use Nano in terminal
 
 # PS4 Toolchain
-export OO_PS4_TOOLCHAIN='/home/deep/Workspace/Projekte/PS4/OpenOrbis-PS4-Toolchain'
-export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 # for error: 'Couldn't find a valid ICU package installed on the system.'
+#export OO_PS4_TOOLCHAIN='/home/deep/Workspace/Projekte/PS4/OpenOrbis-PS4-Toolchain'
+#export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 # for error: 'Couldn't find a valid ICU package installed on the system.'
 
 # bash completion
 source /usr/local/share/bash-completion/bash_completion.sh 
 
 # doas
 complete -cf doas
+
+# rsync
+alias rsync="rsync -v --stats --progress"
+alias cp=rsync
 
 ### ARCHIVE EXTRACTION
 # usage: extract <file>
@@ -60,28 +64,23 @@ alias SL='| sort | less'
 alias S='| sort'
 alias T='|tail'
 
-
 # Colorize grep output (good for log files)
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-
 # Colorize ls output
-alias ls='ls --color=auto -rthla'
-
+alias ls='eza -rhla'
 
 # confirm before overwriting something
 alias cp="cp -iv"
 alias mv='mv -iv'
 alias rm='rm -iv'
 
-
 # print human-readable
 alias du='du -hc'
 alias df='df -h'
 alias free='free -m'
-
 
 # ps
 alias psa="ps auxf"
