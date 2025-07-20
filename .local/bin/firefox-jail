@@ -1,7 +1,0 @@
-#! /bin/sh
-
-jail_hostname=browserjail
-jail_id=$(jls -h jid host.hostname | grep $jail_hostname | cut -w -f 1)
-
-program=$(printf 'firefox\ntest' | dmenu -p 'select browser')
-exec jailme $jail_id $program

@@ -1,0 +1,1 @@
+/home/deep/.bash_profile

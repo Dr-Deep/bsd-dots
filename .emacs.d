@@ -1,0 +1,1 @@
+/home/deep/.emacs.d
