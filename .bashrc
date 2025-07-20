@@ -1,1 +1,101 @@
-/home/deep/.bashrc
+# ~/.bashrc @Dr.Deep
+
+# PROMPT
+PS1='\[\e[0m\]┌─\[\e[0m\][\[\e[0m\]\u\[\e[0m\]@\[\e[0m\]\h\[\e[0m\]]\[\e[0m\]-\[\e[0m\][\[\e[0m\]\w\[\e[0m\]]\n\[\e[0m\]└──╼\[\e[0m\][\[\e[0m\]\$\[\e[0m\]]\[\e[0m\]> \[\e[0m\]'
+
+# Terminal issues with SSH
+[ "$TERM" = "xterm-kitty" ] && alias ssh="TERM='xterm' ssh"
+
+export PATH=$HOME/.local/bin:$PATH # /usr/local/plan9/bin to your PATH. aber ohne freebsd zeugs nur /usr/local
+export EDITOR="nano"     # $EDITOR use Nano in terminal
+
+# PS4 Toolchain
+#export OO_PS4_TOOLCHAIN='/home/deep/Workspace/Projekte/PS4/OpenOrbis-PS4-Toolchain'
+#export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1 # for error: 'Couldn't find a valid ICU package installed on the system.'
+
+# bash completion
+source /usr/local/share/bash-completion/bash_completion.sh 
+
+# Pager
+export PAGER=most
+
+# doas
+complete -cf doas
+
+# rsync
+alias rsync="rsync -v --stats --progress"
+alias cp="rsync -v --stats --progress"
+
+# Server
+alias hbsdsrv="ssh deep@vmd171781.contaboserver.net"
+
+# Package Management
+alias pkgs="pkg search -o -Q repository"
+alias pkgin="doas pkg install"
+alias pkgrm="doas pkg remove"
+
+### ARCHIVE EXTRACTION
+# usage: extract <file>
+extract () {
+    if [ -f "$1" ] ; then
+    case $1 in
+        *.tar.bz2)   tar xjf $1   ;;
+        *.tar.gz)    tar xzf $1   ;;
+        *.bz2)       bunzip2 $1   ;;
+        *.rar)       unrar x $1   ;;
+        *.gz)        gunzip $1    ;;
+        *.tar)       tar xf $1    ;;
+        *.tbz2)      tar xjf $1   ;;
+        *.tgz)       tar xzf $1   ;;
+        *.zip)       unzip $1     ;;
+        *.Z)         uncompress $1;;
+        *.7z)        7z x $1      ;;
+        *.deb)       ar x $1      ;;
+        *.tar.xz)    tar xf $1    ;;
+        *.tar.zst)   unzstd $1    ;;
+        *) echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# Global aliases
+alias '...'='../..'
+alias '....'='../../..'
+alias C='|wc -l'
+alias G='|grep --color=auto'
+alias H='|head'
+alias L='|less'
+alias LL='|& less -r'
+alias M='|most'
+alias N='&>/dev/null'
+alias R='| tr A-z N-za-m'
+alias SL='| sort | less'
+alias S='| sort'
+alias T='|tail'
+
+# Colorize grep output
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# Colorize ls output
+alias ls='eza -rhl'
+alias la='eza -rhla'
+
+# confirm before overwriting something
+alias cp="cp -iv"
+alias mv='mv -iv'
+alias rm='rm -iv'
+
+# print human-readable
+alias du='du -hc'
+alias df='df -h'
+alias free='free -m'
+
+# ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias psmem='ps auxf | sort -nr -k 4'
+alias pscpu='ps auxf | sort -nr -k 3'

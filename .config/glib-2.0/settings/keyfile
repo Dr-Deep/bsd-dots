@@ -1,0 +1,59 @@
+[org/gtk/settings/file-chooser]
+window-position=(0, 65)
+window-size=(1096, 945)
+date-format='regular'
+location-mode='path-bar'
+show-hidden=true
+show-size-column=true
+show-type-column=true
+sidebar-width=171
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+
+[org/gnome/desktop/interface]
+cursor-theme='default'
+cursor-size=24
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
+
+[org/virt-manager/virt-manager/connections]
+uris=['bhyve:///system']
+autoconnect=['bhyve:///system']
+
+[org/virt-manager/virt-manager/conns/bhyve:system]
+window-size=(800, 600)
+
+[org/virt-manager/virt-manager]
+manager-window-width=458
+manager-window-height=496
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/deep/Win10.iso']
+
+[org/virt-manager/virt-manager/vms/e3f4808cf1014fa59e0fb1a8e5bfa28a]
+scaling=1
+autoconnect=1
+vm-window-size=(540, 1026)
+
+[org/virt-manager/virt-manager/confirm]
+unapplied-dev=true
+removedev=true
+forcepoweroff=true
+delete-storage=true
+
+[org/virt-manager/virt-manager/details]
+show-toolbar=true
+
+[org/virt-manager/virt-manager/vms/e11cf46f2c2f4b9ab8842fdb36df6bdb]
+scaling=1
+autoconnect=1
+vm-window-size=(540, 745)
+
+[org/virt-manager/virt-manager/vms/0b0d05ed1955450b9b0051c82ed85fbe]
+scaling=1
+autoconnect=1
+vm-window-size=(1024, 810)

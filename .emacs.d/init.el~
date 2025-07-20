@@ -1,0 +1,52 @@
+;; ~/.emacs.d/init.el
+
+(set-language-environment "UTF-8")
+(prefer-coding-system 'utf-8)
+
+;; Some Settings
+(setq inhibit-startup-message t) ; No MOTD
+;;(scroll-bar-mode -1) ; scrollbar
+(tool-bar-mode -1) ; toolbar
+
+(column-number-mode)
+(global-display-line-numbers-mode t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+
+(transient-mark-mode 1) ; No Region when it is not highlighted
+
+;; Theme
+
+
+;; Key Settings
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; ESC quit
+
+(cua-mode t) ; Copy & Paste & Cut Key-Bindings
+(global-set-key (kbd "C-a") 'mark-whole-buffer) ; CTRL-A mark Buffer
+
+
+
+
+;; Package Management
+(setq package-archives
+      '(
+	("GNU ELPA" . "https://elpa.gnu.org/packages/")
+	("MELPA STABLE" . "https://stable.melpa.org/packages/")
+	("MELPA" . "https://melpa.org/packages/")
+	)
+      )
+(setq package-archive-priorities
+      '(
+	("GNU ELPA" . 10)
+	("MELPA" . 5)
+	("MELPA STABLE" . 0)
+	)
+      )
+(require 'package )
+(require 'use-package)
+(setq use-package-always-ensure t)
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+
+;; Modes

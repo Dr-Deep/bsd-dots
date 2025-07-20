@@ -1,0 +1,9 @@
+NAME=HardenedBSD
+VERSION="14.3-STABLE-HBSD"
+VERSION_ID="14.3"
+ID=hardenedbsd
+ANSI_COLOR="0;31"
+PRETTY_NAME="HardenedBSD 14.3-STABLE-HBSD"
+CPE_NAME="cpe:/o:freebsd:freebsd:14.3"
+HOME_URL="https://hardenedbsd.org/"
+BUG_REPORT_URL="https://git.hardenedbsd.org/hardenedbsd/HardenedBSD/-/issues"

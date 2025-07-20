@@ -1,0 +1,23 @@
+{
+ "Week": "2024-12-30",
+ "LastWeek": "",
+ "X": 0.8924887868163278,
+ "Programs": [
+  {
+   "Program": "golang.org/x/tools/gopls",
+   "Version": "devel",
+   "GoVersion": "go1.21.13",
+   "GOOS": "freebsd",
+   "GOARCH": "amd64",
+   "Counters": {
+    "gopls/client:other": 1,
+    "gopls/gotoolchain:auto": 1,
+    "gopls/goversion:1.21": 1,
+    "gopls/hover/latency:\u003c10ms": 3,
+    "gopls/telemetryprompt/attempts:0": 1
+   },
+   "Stacks": {}
+  }
+ ],
+ "Config": "v0.0.0-0"
+}

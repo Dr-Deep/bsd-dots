@@ -1,0 +1,9 @@
+# Device		Mountpoint		FStype		Options				Dump Pass
+/dev/gpt/efiboot0	/boot/efi		msdosfs		rw				2 2
+/dev/nvd0p2.eli		none			swap		sw				0 0
+
+# Misc
+fdescfs                 /dev/fd         	fdescfs 	rw                      	0 0
+proc                    /proc           	procfs		rw                      	0 0
+tmpfs                   /tmp            	tmpfs   	rw,nosuid,mode=1777     	0 0
+tmpfs			/var/run		tmpfs		rw,nosuid,mode=1777		0 0

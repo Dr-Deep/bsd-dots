@@ -1,0 +1,167 @@
+03:00:07.884: Platform: Wayland
+03:00:07.884: CPU Name: Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+03:00:07.884: CPU: Missing /var/run/dmesg.boot !
+03:00:07.884: Physical Cores: 4, Logical Cores: 4
+03:00:07.890: Physical Memory: 7697MB Total, 2592MB Free
+03:00:07.890: Kernel Version: FreeBSD 14.1-STABLE-HBSD
+03:00:07.890: Distribution: HardenedBSD "14.1"
+03:00:07.890: Desktop Environment: Hyprland
+03:00:07.890: Session Type: wayland
+03:00:07.901: Qt Version: 6.7.2 (runtime), 6.7.2 (compiled)
+03:00:07.901: Portable mode: false
+03:00:08.123: OBS 30.1.2 (freebsd)
+03:00:08.123: ---------------------------------
+03:00:08.125: ---------------------------------
+03:00:08.125: audio settings reset:
+03:00:08.125: 	samples per sec: 48000
+03:00:08.125: 	speakers:        2
+03:00:08.125: 	max buffering:   960 milliseconds
+03:00:08.125: 	buffering type:  dynamically increasing
+03:00:08.344: ---------------------------------
+03:00:08.345: Initializing OpenGL...
+03:00:08.345: Using EGL/Wayland
+03:00:09.260: Initialized EGL 1.5
+03:00:09.334: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 600 (GLK 2)
+03:00:09.334: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.9, shading language 4.60
+03:00:10.149: ---------------------------------
+03:00:10.149: video settings reset:
+03:00:10.149: 	base resolution:   1920x1080
+03:00:10.149: 	output resolution: 1280x720
+03:00:10.149: 	downscale filter:  Bicubic
+03:00:10.149: 	fps:               30/1
+03:00:10.149: 	format:            NV12
+03:00:10.149: 	YUV mode:          Rec. 709/Partial
+03:00:10.150: NV12 texture support enabled
+03:00:10.150: P010 texture support not available
+03:00:10.185: Audio monitoring device:
+03:00:10.185: 	name: Default
+03:00:10.185: 	id: default
+03:00:10.186: ---------------------------------
+03:00:12.845: [pipewire] No captures available
+03:00:12.982: v4l2loopback not installed, virtual camera disabled
+03:00:16.477: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): Shared object "libnvidia-encode.so.1" not found, required by "obs"
+03:00:16.477: 
+03:00:16.600: VAAPI: API version 1.22
+03:00:16.601: FFmpeg VAAPI H264 encoding supported
+03:00:16.603: FFmpeg VAAPI AV1 encoding not supported
+03:00:16.606: FFmpeg VAAPI HEVC encoding supported
+03:00:18.584: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.4.2 | RPC Version: 1)
+03:00:18.584: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.7.2 | Qt version (run-time): 6.7.2
+03:00:18.585: [obs-websocket] [obs_module_load] Linked ASIO Version: 102800
+03:00:18.609: [obs-websocket] [obs_module_load] Module loaded.
+03:00:19.155: [vlc-video]: VLC 3.0.21 Vetinari found, VLC video source enabled
+03:00:19.155: ---------------------------------
+03:00:19.155:   Loaded Modules:
+03:00:19.155:     vlc-video.so
+03:00:19.155:     text-freetype2.so
+03:00:19.155:     sndio.so
+03:00:19.156:     rtmp-services.so
+03:00:19.156:     oss-audio.so
+03:00:19.156:     obs-x264.so
+03:00:19.156:     obs-websocket.so
+03:00:19.156:     obs-webrtc.so
+03:00:19.156:     obs-transitions.so
+03:00:19.156:     obs-outputs.so
+03:00:19.156:     obs-filters.so
+03:00:19.156:     obs-ffmpeg.so
+03:00:19.156:     linux-v4l2.so
+03:00:19.156:     linux-pulseaudio.so
+03:00:19.156:     linux-pipewire.so
+03:00:19.156:     linux-jack.so
+03:00:19.156:     linux-capture.so
+03:00:19.156:     image-source.so
+03:00:19.156:     frontend-tools.so
+03:00:19.156: ---------------------------------
+03:00:19.157: ==== Startup complete ===============================================
+03:00:19.271: All scene data cleared
+03:00:19.271: ------------------------------------------------
+03:00:19.296: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:00:19.296: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:00:19.303: Switched to scene 'Scene'
+03:00:19.304: ------------------------------------------------
+03:00:19.304: Loaded scenes:
+03:00:19.304: - scene 'Scene':
+03:00:19.304:     - source: 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source)
+03:00:19.304: ------------------------------------------------
+03:00:19.739: [camera-portal] Error accessing camera: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Camera” on object at path /org/freedesktop/portal/desktop
+03:00:28.547: User Removed source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) from scene 'Scene'
+03:00:37.271: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:00:37.272: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:00:37.281: User added source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) to scene 'Scene'
+03:00:37.319: [camera-portal] Selected resolution for ''
+03:00:37.319: [camera-portal] Selected format for ''
+03:00:37.319: [camera-portal] selected camera ''
+03:00:40.987: [camera-portal] Updating device 
+03:00:45.279: v4l2-input: Start capture from 
+03:00:45.279: v4l2-input: Unable to open device
+03:00:45.279: v4l2-input: Initialization failed, errno: No such file or directory
+03:00:45.289: User added source 'Video Capture Device (V4L2)' (v4l2_input) to scene 'Scene'
+03:00:45.323: v4l2-input: Unable to open /dev/video0
+03:00:45.324: v4l2-input: Unable to open /dev/video1
+03:00:48.887: v4l2-input: Start capture from 
+03:00:48.888: v4l2-input: Unable to open device
+03:00:48.888: v4l2-input: Initialization failed, errno: No such file or directory
+03:00:50.145: ==== Shutting down ==================================================
+03:00:50.204: All scene data cleared
+03:00:50.204: ------------------------------------------------
+03:00:50.306: [obs-websocket] [obs_module_unload] Shutting down...
+03:00:50.306: Tried to call obs_frontend_remove_event_callback with no callbacks!
+03:00:50.306: [obs-websocket] [obs_module_unload] Finished shutting down.
+03:00:50.356: [Scripting] Total detached callbacks: 0
+03:00:50.357: Freeing OBS context data
+03:00:50.478: == Profiler Results =============================
+03:00:50.479: run_program_init: 12075.3 ms
+03:00:50.479:  ┣OBSApp::AppInit: 22.003 ms
+03:00:50.479:  ┃ ┗OBSApp::InitLocale: 3.819 ms
+03:00:50.479:  ┗OBSApp::OBSInit: 11774.6 ms
+03:00:50.479:    ┣obs_startup: 16.578 ms
+03:00:50.479:    ┗OBSBasic::OBSInit: 11534 ms
+03:00:50.479:      ┣OBSBasic::InitBasicConfig: 0.622 ms
+03:00:50.479:      ┣OBSBasic::ResetAudio: 1.416 ms
+03:00:50.480:      ┣OBSBasic::ResetVideo: 2058.72 ms
+03:00:50.480:      ┃ ┗obs_init_graphics: 2022.08 ms
+03:00:50.480:      ┃   ┗shader compilation: 811.441 ms
+03:00:50.480:      ┣OBSBasic::InitOBSCallbacks: 0.01 ms
+03:00:50.480:      ┣OBSBasic::InitHotkeys: 0.052 ms
+03:00:50.480:      ┣obs_load_all_modules2: 8969.49 ms
+03:00:50.480:      ┃ ┣obs_init_module(frontend-tools.so): 455.516 ms
+03:00:50.480:      ┃ ┣obs_init_module(image-source.so): 0.072 ms
+03:00:50.480:      ┃ ┣obs_init_module(linux-capture.so): 0.001 ms
+03:00:50.481:      ┃ ┣obs_init_module(linux-jack.so): 0.012 ms
+03:00:50.481:      ┃ ┣obs_init_module(linux-pipewire.so): 72.139 ms
+03:00:50.481:      ┃ ┣obs_init_module(linux-pulseaudio.so): 0.029 ms
+03:00:50.481:      ┃ ┣obs_init_module(linux-v4l2.so): 6.036 ms
+03:00:50.481:      ┃ ┣obs_init_module(obs-ffmpeg.so): 129.775 ms
+03:00:50.481:      ┃ ┃ ┗nvenc_check: 0.45 ms
+03:00:50.481:      ┃ ┣obs_init_module(obs-filters.so): 0.192 ms
+03:00:50.481:      ┃ ┣obs_init_module(obs-outputs.so): 0.031 ms
+03:00:50.481:      ┃ ┣obs_init_module(obs-transitions.so): 0.052 ms
+03:00:50.482:      ┃ ┣obs_init_module(obs-webrtc.so): 0.019 ms
+03:00:50.482:      ┃ ┣obs_init_module(obs-websocket.so): 24.715 ms
+03:00:50.482:      ┃ ┣obs_init_module(obs-x264.so): 0.014 ms
+03:00:50.482:      ┃ ┣obs_init_module(oss-audio.so): 0.018 ms
+03:00:50.482:      ┃ ┣obs_init_module(rtmp-services.so): 0.8 ms
+03:00:50.482:      ┃ ┣obs_init_module(sndio.so): 0.024 ms
+03:00:50.482:      ┃ ┣obs_init_module(text-freetype2.so): 0.181 ms
+03:00:50.482:      ┃ ┗obs_init_module(vlc-video.so): 185.111 ms
+03:00:50.482:      ┣OBSBasic::InitService: 11.053 ms
+03:00:50.483:      ┣OBSBasic::ResetOutputs: 0.719 ms
+03:00:50.483:      ┣OBSBasic::CreateHotkeys: 0.117 ms
+03:00:50.483:      ┣OBSBasic::InitPrimitives: 0.462 ms
+03:00:50.483:      ┗OBSBasic::Load: 135.432 ms
+03:00:50.483: obs_hotkey_thread(25 ms): min=0 ms, median=0.001 ms, max=0.023 ms, 99th percentile=0.004 ms, 100% below 25 ms
+03:00:50.483: audio_thread(Audio): min=0.019 ms, median=0.044 ms, max=10.336 ms, 99th percentile=0.494 ms
+03:00:50.483: obs_graphics_thread(33.3333 ms): min=0.082 ms, median=1.01 ms, max=158.991 ms, 99th percentile=41.595 ms, 98.9343% below 33.333 ms
+03:00:50.483:  ┣tick_sources: min=0 ms, median=0.015 ms, max=1.667 ms, 99th percentile=0.038 ms
+03:00:50.484:  ┣output_frame: min=0.04 ms, median=0.292 ms, max=22.21 ms, 99th percentile=1.05 ms
+03:00:50.484:  ┃ ┗gs_context(video->graphics): min=0.039 ms, median=0.29 ms, max=22.173 ms, 99th percentile=1.049 ms
+03:00:50.484:  ┃   ┣render_video: min=0.014 ms, median=0.059 ms, max=0.488 ms, 99th percentile=0.189 ms
+03:00:50.484:  ┃   ┃ ┗render_main_texture: min=0.011 ms, median=0.051 ms, max=0.42 ms, 99th percentile=0.171 ms
+03:00:50.484:  ┃   ┗gs_flush: min=0.004 ms, median=0.195 ms, max=21.815 ms, 99th percentile=0.962 ms
+03:00:50.484:  ┗render_displays: min=0.018 ms, median=0.576 ms, max=147.425 ms, 99th percentile=24.729 ms
+03:00:50.484: =================================================
+03:00:50.484: == Profiler Time Between Calls ==================
+03:00:50.485: obs_hotkey_thread(25 ms): min=25.011 ms, median=25.024 ms, max=1701.69 ms, 98.9158% within ±2% of 25 ms (0% lower, 1.08418% higher)
+03:00:50.485: obs_graphics_thread(33.3333 ms): min=0.202 ms, median=33.28 ms, max=1721.96 ms, 60.8889% within ±2% of 33.333 ms (17.6% lower, 21.5111% higher)
+03:00:50.485: =================================================
+03:00:50.517: Number of memory leaks: 2

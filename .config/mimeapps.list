@@ -1,0 +1,25 @@
+[Default Applications]
+x-scheme-handler/http=userapp-Firefox-BS4NU2.desktop
+x-scheme-handler/https=userapp-Firefox-BS4NU2.desktop
+x-scheme-handler/chrome=userapp-Firefox-BS4NU2.desktop
+text/html=userapp-Firefox-BS4NU2.desktop
+application/x-extension-htm=userapp-Firefox-BS4NU2.desktop
+application/x-extension-html=userapp-Firefox-BS4NU2.desktop
+application/x-extension-shtml=userapp-Firefox-BS4NU2.desktop
+application/xhtml+xml=userapp-Firefox-BS4NU2.desktop
+application/x-extension-xhtml=userapp-Firefox-BS4NU2.desktop
+application/x-extension-xht=userapp-Firefox-BS4NU2.desktop
+image/png=gpicview.desktop
+
+[Added Associations]
+x-scheme-handler/http=userapp-Firefox-BS4NU2.desktop;
+x-scheme-handler/https=userapp-Firefox-BS4NU2.desktop;
+x-scheme-handler/chrome=userapp-Firefox-BS4NU2.desktop;
+text/html=userapp-Firefox-BS4NU2.desktop;
+application/x-extension-htm=userapp-Firefox-BS4NU2.desktop;
+application/x-extension-html=userapp-Firefox-BS4NU2.desktop;
+application/x-extension-shtml=userapp-Firefox-BS4NU2.desktop;
+application/xhtml+xml=userapp-Firefox-BS4NU2.desktop;
+application/x-extension-xhtml=userapp-Firefox-BS4NU2.desktop;
+application/x-extension-xht=userapp-Firefox-BS4NU2.desktop;
+image/png=gpicview.desktop;

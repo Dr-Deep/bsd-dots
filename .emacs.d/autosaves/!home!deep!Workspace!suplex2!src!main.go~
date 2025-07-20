@@ -1,0 +1,104 @@
+package main
+
+import (
+	//_ "go.mau.fi/libsignal"
+	"go.mau.fi/libsignal/session"
+	_ "go.mau.fi/libsignal/session"
+)
+
+var ()
+
+func init() {}
+
+func main() {
+	ses
+}
+
+/*
+import (
+	"github.com/RadicalApp/libsignal-protocol-go/serialize"
+	"github.com/RadicalApp/libsignal-protocol-go/session"
+	"github.com/RadicalApp/libsignal-protocol-go/state/record"
+	"github.com/RadicalApp/libsignal-protocol-go/util/keyhelper"
+)
+
+...
+
+// Create a serializer that will be responsible for converting objects into
+// storeable and transportable bytes.
+serializer := serialize.NewJSONSerializer()
+
+// Generate an identity keypair
+identityKeyPair, err := keyhelper.GenerateIdentityKeyPair()
+if err != nil {
+    panic("Unable to generate identity key pair!")
+}
+
+// Generate a registration id
+registrationID := keyhelper.GenerateRegistrationID(false)
+
+// Generate PreKeys
+preKeys, err := keyhelper.GeneratePreKeys(0, 100, serializer.PreKeyRecord)
+if err != nil {
+    panic("Unable to generate pre keys!")
+}
+
+// Generate Signed PreKey
+signedPreKey, err := keyhelper.GenerateSignedPreKey(identityKeyPair, 0, serializer.SignedPreKeyRecord)
+if err != nil {
+    panic("Unable to generate signed prekey!")
+}
+
+// Create durable stores for sessions, prekeys, signed prekeys, and identity keys.
+// These should be implemented yourself and follow the store interfaces.
+sessionStore      := NewSessionStore()
+preKeyStore       := NewPreKeyStore()
+signedPreKeyStore := NewSignedPreKeyStore()
+identityStore     := NewIdentityKeyStore(identityKeyPair, registrationID)
+
+// Put all our pre keys in our local stores.
+for i := range preKeys {
+	preKeyStore.StorePreKey(
+		preKeys[i].ID().Value,
+		record.NewPreKey(preKeys[i].ID().Value, preKeys[i].KeyPair(), serializer.PreKeyRecord),
+	)
+}
+
+// Store our own signed prekey
+signedPreKeyStore.StoreSignedPreKey(
+	signedPreKey.ID(),
+	record.NewSignedPreKey(
+		signedPreKey.ID(),
+		signedPreKey.Timestamp(),
+		signedPreKey.KeyPair(),
+		signedPreKey.Signature(),
+		serializer.SignedPreKeyRecord,
+	),
+)
+*/
+
+/*
+// Instantiate a SessionBuilder for a remote recipientId + deviceId tuple.
+sessionBuilder := session.NewBuilder(
+	sessionStore,
+	preKeyStore,
+	signedPreKeyStore,
+	identityStore,
+	address,
+	serializer,
+)
+
+// Build a session with a PreKey retrieved from the server.
+sessionBuilder.ProcessBundle(retrievedPreKey)
+
+// Encrypt a message to send.
+sessionCipher := session.NewCipher(sessionBuilder, address)
+message, err := sessionCipher.Encrypt([]byte{"Hello world!"})
+if err != nil {
+    panic("Unable to encrypt message!")
+}
+
+// Send the message with your own deliver method. The deliver method should be
+// your own implementation for sending an encrypted message to someone.
+deliver(message.serialize())
+*/

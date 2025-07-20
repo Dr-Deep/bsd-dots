@@ -1,0 +1,202 @@
+03:06:38.204: Platform: Wayland
+03:06:38.205: CPU Name: Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+03:06:38.205: CPU: Missing /var/run/dmesg.boot !
+03:06:38.205: Physical Cores: 4, Logical Cores: 4
+03:06:38.212: Physical Memory: 7697MB Total, 3087MB Free
+03:06:38.212: Kernel Version: FreeBSD 14.1-STABLE-HBSD
+03:06:38.212: Distribution: HardenedBSD "14.1"
+03:06:38.212: Desktop Environment: Hyprland
+03:06:38.213: Session Type: wayland
+03:06:38.227: Qt Version: 6.7.2 (runtime), 6.7.2 (compiled)
+03:06:38.227: Portable mode: false
+03:06:38.470: OBS 30.1.2 (freebsd)
+03:06:38.470: ---------------------------------
+03:06:38.472: ---------------------------------
+03:06:38.472: audio settings reset:
+03:06:38.472: 	samples per sec: 48000
+03:06:38.472: 	speakers:        2
+03:06:38.472: 	max buffering:   960 milliseconds
+03:06:38.472: 	buffering type:  dynamically increasing
+03:06:38.719: ---------------------------------
+03:06:38.719: Initializing OpenGL...
+03:06:38.719: Using EGL/Wayland
+03:06:39.861: Initialized EGL 1.5
+03:06:39.964: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 600 (GLK 2)
+03:06:39.964: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.9, shading language 4.60
+03:06:41.231: ---------------------------------
+03:06:41.231: video settings reset:
+03:06:41.231: 	base resolution:   1920x1080
+03:06:41.231: 	output resolution: 1280x720
+03:06:41.231: 	downscale filter:  Bicubic
+03:06:41.231: 	fps:               30/1
+03:06:41.231: 	format:            NV12
+03:06:41.231: 	YUV mode:          Rec. 709/Partial
+03:06:41.233: NV12 texture support enabled
+03:06:41.233: P010 texture support not available
+03:06:41.278: Audio monitoring device:
+03:06:41.278: 	name: Default
+03:06:41.278: 	id: default
+03:06:41.278: ---------------------------------
+03:06:44.875: [pipewire] No captures available
+03:06:45.060: v4l2loopback not installed, virtual camera disabled
+03:06:49.691: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): Shared object "libnvidia-encode.so.1" not found, required by "obs"
+03:06:49.691: 
+03:06:49.851: VAAPI: API version 1.22
+03:06:49.853: FFmpeg VAAPI H264 encoding supported
+03:06:49.857: FFmpeg VAAPI AV1 encoding not supported
+03:06:49.861: FFmpeg VAAPI HEVC encoding supported
+03:06:52.489: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.4.2 | RPC Version: 1)
+03:06:52.489: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.7.2 | Qt version (run-time): 6.7.2
+03:06:52.489: [obs-websocket] [obs_module_load] Linked ASIO Version: 102800
+03:06:52.521: [obs-websocket] [obs_module_load] Module loaded.
+03:06:53.261: [vlc-video]: VLC 3.0.21 Vetinari found, VLC video source enabled
+03:06:53.262: ---------------------------------
+03:06:53.262:   Loaded Modules:
+03:06:53.262:     vlc-video.so
+03:06:53.262:     text-freetype2.so
+03:06:53.262:     sndio.so
+03:06:53.262:     rtmp-services.so
+03:06:53.262:     oss-audio.so
+03:06:53.262:     obs-x264.so
+03:06:53.262:     obs-websocket.so
+03:06:53.263:     obs-webrtc.so
+03:06:53.263:     obs-transitions.so
+03:06:53.263:     obs-outputs.so
+03:06:53.263:     obs-filters.so
+03:06:53.264:     obs-ffmpeg.so
+03:06:53.264:     linux-v4l2.so
+03:06:53.264:     linux-pulseaudio.so
+03:06:53.264:     linux-pipewire.so
+03:06:53.265:     linux-jack.so
+03:06:53.265:     linux-capture.so
+03:06:53.265:     image-source.so
+03:06:53.265:     frontend-tools.so
+03:06:53.265: ---------------------------------
+03:06:53.265: ==== Startup complete ===============================================
+03:06:53.401: All scene data cleared
+03:06:53.401: ------------------------------------------------
+03:06:53.435: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:06:53.436: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:06:53.443: v4l2-input: Start capture from 
+03:06:53.443: v4l2-input: Unable to open device
+03:06:53.444: v4l2-input: Initialization failed, errno: No such file or directory
+03:06:53.450: Switched to scene 'Scene'
+03:06:53.450: ------------------------------------------------
+03:06:53.450: Loaded scenes:
+03:06:53.450: - scene 'Scene':
+03:06:53.450:     - source: 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source)
+03:06:53.451:     - source: 'Video Capture Device (V4L2)' (v4l2_input)
+03:06:53.451: ------------------------------------------------
+03:06:54.121: [camera-portal] Error accessing camera: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Camera” on object at path /org/freedesktop/portal/desktop
+03:06:59.283: User Removed source 'Video Capture Device (V4L2)' (v4l2_input) from scene 'Scene'
+03:07:01.981: User Removed source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) from scene 'Scene'
+03:07:06.403: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:07:06.403: obs-data.c: [obs_data_create_from_json] Failed reading json string (1): '[' or '{' expected near end of file
+03:07:06.418: User added source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) to scene 'Scene'
+03:07:06.466: [camera-portal] Selected resolution for ''
+03:07:06.466: [camera-portal] Selected format for ''
+03:07:06.466: [camera-portal] selected camera ''
+03:07:13.106: [camera-portal] Selected resolution for ''
+03:07:13.106: [camera-portal] Selected format for ''
+03:07:13.106: [camera-portal] selected camera ''
+03:07:13.113: [camera-portal] Updating device 
+03:07:14.281: [camera-portal] Updating device 
+03:07:19.095: v4l2-input: Start capture from 
+03:07:19.095: v4l2-input: Unable to open device
+03:07:19.096: v4l2-input: Initialization failed, errno: No such file or directory
+03:07:19.110: User added source 'Video Capture Device (V4L2)' (v4l2_input) to scene 'Scene'
+03:07:19.170: v4l2-input: Found device 'USB Video: USB Video' at /dev/video0
+03:07:19.173: v4l2-input: /dev/video1 seems to not support video capture
+03:07:19.187: v4l2-input: Found input 'Camera 1' (Index 0)
+03:07:19.195: v4l2-input: Pixelformat: Motion-JPEG (available)
+03:07:19.195: v4l2-input: Pixelformat: YUYV 4:2:2 (available)
+03:07:19.195: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+03:07:19.195: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+03:07:19.196: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+03:07:19.196: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+03:07:19.202: v4l2-input: Stepwise and Continuous framesizes are currently hardcoded
+03:07:19.208: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+03:07:19.212: v4l2-input: Start capture from /dev/video0
+03:07:19.218: v4l2-input: Input: 0
+03:07:19.219: v4l2-input: Resolution: 1920x1080
+03:07:19.219: v4l2-input: Pixelformat: YUYV
+03:07:19.219: v4l2-input: Linesize: 3840 Bytes
+03:07:19.220: v4l2-input: Framerate: 5.00 fps
+03:07:19.222: v4l2-input: /dev/video0: select timeout set to 1000000 (5x frame periods)
+03:07:19.238: v4l2-input: /dev/video0: select failed
+03:07:19.238: v4l2-input: /dev/video0: Stopped capture after 0 frames
+03:07:19.277: v4l2-input: Start capture from /dev/video0
+03:07:19.281: v4l2-input: Pixelformat: Motion-JPEG (available)
+03:07:19.281: v4l2-input: Pixelformat: YUYV 4:2:2 (available)
+03:07:19.281: v4l2-input: Pixelformat: RGB3 (Emulated) (unavailable)
+03:07:19.282: v4l2-input: Pixelformat: BGR3 (Emulated) (available)
+03:07:19.282: v4l2-input: Pixelformat: YU12 (Emulated) (available)
+03:07:19.282: v4l2-input: Pixelformat: YV12 (Emulated) (available)
+03:07:19.288: v4l2-input: Input: 0
+03:07:19.289: v4l2-input: Resolution: 1920x1080
+03:07:19.289: v4l2-input: Pixelformat: YUYV
+03:07:19.289: v4l2-input: Linesize: 3840 Bytes
+03:07:19.290: v4l2-input: Framerate: 5.00 fps
+03:07:19.291: v4l2-input: Stepwise and Continuous framesizes are currently hardcoded
+03:07:19.296: v4l2-input: /dev/video0: select timeout set to 1000000 (5x frame periods)
+03:07:19.301: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+03:07:19.311: v4l2-input: /dev/video0: select failed
+03:07:19.311: v4l2-input: /dev/video0: Stopped capture after 0 frames
+03:07:19.350: v4l2-input: Start capture from /dev/video0
+03:07:19.358: v4l2-input: Input: 0
+03:07:19.363: v4l2-input: Resolution: 1920x1080
+03:07:19.363: v4l2-input: Pixelformat: MJPG
+03:07:19.363: v4l2-input: Linesize: 0 Bytes
+03:07:19.363: v4l2-input: Stepwise and Continuous framerates are currently hardcoded
+03:07:19.363: v4l2-input: Framerate: 60.00 fps
+03:07:19.382: v4l2-input: /dev/video0: select timeout set to 83333 (5x frame periods)
+03:07:19.485: v4l2-input: /dev/video0: select timed out
+03:07:19.485: v4l2-input: /dev/video0: failed to log status
+03:07:19.570: v4l2-input: /dev/video0: select timed out
+03:07:19.570: v4l2-input: /dev/video0: failed to log status
+03:07:19.655: v4l2-input: /dev/video0: select timed out
+03:07:19.655: v4l2-input: /dev/video0: failed to log status
+03:07:19.740: v4l2-input: /dev/video0: select timed out
+03:07:19.740: v4l2-input: /dev/video0: failed to log status
+03:07:19.824: v4l2-input: /dev/video0: select timed out
+03:07:19.824: v4l2-input: /dev/video0: failed to log status
+03:07:19.925: v4l2-input: decoder: failed to send frame to codec
+03:07:19.925: v4l2-input: failed to unpack jpeg or h264
+03:07:19.925: v4l2-input: /dev/video0: Stopped capture after 1 frames
+03:07:32.580: v4l2-input: Start capture from /dev/video0
+03:07:32.585: v4l2-input: Input: 0
+03:07:32.588: v4l2-input: Resolution: 1920x1080
+03:07:32.588: v4l2-input: Pixelformat: MJPG
+03:07:32.589: v4l2-input: Linesize: 0 Bytes
+03:07:32.591: v4l2-input: Framerate: 60.00 fps
+03:07:32.593: v4l2-input: /dev/video0: select timeout set to 83333 (5x frame periods)
+03:07:32.690: v4l2-input: /dev/video0: select timed out
+03:07:32.690: v4l2-input: /dev/video0: failed to log status
+03:07:32.775: v4l2-input: /dev/video0: select timed out
+03:07:32.777: v4l2-input: /dev/video0: failed to log status
+03:07:32.861: v4l2-input: /dev/video0: select timed out
+03:07:32.861: v4l2-input: /dev/video0: failed to log status
+03:07:32.946: v4l2-input: /dev/video0: select timed out
+03:07:32.947: v4l2-input: /dev/video0: failed to log status
+03:07:33.010: v4l2-input: decoder: failed to send frame to codec
+03:07:33.010: v4l2-input: failed to unpack jpeg or h264
+03:07:33.011: v4l2-input: /dev/video0: Stopped capture after 1 frames
+03:07:35.313: v4l2-input: Start capture from /dev/video0
+03:07:35.319: v4l2-input: Input: 0
+03:07:35.322: v4l2-input: Resolution: 1920x1080
+03:07:35.322: v4l2-input: Pixelformat: MJPG
+03:07:35.322: v4l2-input: Linesize: 0 Bytes
+03:07:35.324: v4l2-input: Framerate: 60.00 fps
+03:07:35.325: v4l2-input: /dev/video0: select timeout set to 83333 (5x frame periods)
+03:07:35.424: v4l2-input: /dev/video0: select timed out
+03:07:35.425: v4l2-input: /dev/video0: failed to log status
+03:07:35.509: v4l2-input: /dev/video0: select timed out
+03:07:35.509: v4l2-input: /dev/video0: failed to log status
+03:07:35.594: v4l2-input: /dev/video0: select timed out
+03:07:35.595: v4l2-input: /dev/video0: failed to log status
+03:07:35.722: v4l2-input: decoder: failed to send frame to codec
+03:07:35.722: v4l2-input: failed to unpack jpeg or h264
+03:07:35.722: v4l2-input: /dev/video0: Stopped capture after 1 frames
+03:08:02.656: User Removed source 'Video Capture Device (PipeWire) (BETA)' (pipewire-camera-source) from scene 'Scene'
+03:08:10.896: Creating a popup with a parent, QWidgetWindow(0x4ac897f640, name="OBSBasicWindow") which does not match the current topmost grabbing popup, QWidgetWindow(0x4acf8275a0, name="QMenuClassWindow") With some shell surface protocols, this is not allowed. The wayland QPA plugin is currently handling it by setting the parent to the topmost grabbing popup. Note, however, that this may cause positioning errors and popups closing unxpectedly. Please fix the transient parent of the popup.
+03:08:17.789: Failed to inhibit: GDBus.Error:org.freedesktop.DBus.Error.UnknownMethod: No such interface “org.freedesktop.portal.Inhibit” on object at path /org/freedesktop/portal/desktop

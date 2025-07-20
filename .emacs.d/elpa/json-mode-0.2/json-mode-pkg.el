@@ -1,0 +1,2 @@
+;; Generated package description from json-mode.el  -*- no-byte-compile: t -*-
+(define-package "json-mode" "0.2" "Major mode for editing JSON files" '((emacs "25.1")) :commit "dc1e531039e381edf04787c89d17038db5dc8b77" :url "https://elpa.gnu.org/packages/json-mode.html" :authors '(("Simen Heggestøyl" . "simenheg@gmail.com")) :maintainer '("Simen Heggestøyl" . "simenheg@gmail.com") :keywords '("data"))

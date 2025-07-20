@@ -1,0 +1,188 @@
+;; ~/.emacs.d/init.el by @Dr.Deep
+
+;; Visuelles Zeug
+(setq inhibit-startup-message t) ; keine startup-mesg
+(scroll-bar-mode -1)  ; keine scrollbar
+(tool-bar-mode -1)    ; disable Toolbar
+(set-face-attribute 'default nil :height 100)
+(set-frame-parameter nil 'alpha-background 90)
+
+;; Line-Numbers
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+;; disable line-numbers for some modes
+(dolist (mode '(org-mode-hook
+	      term-mode-hook
+	      shell-mode-hook
+	      treemacs-mode-hook
+	      eshell-mode-hook
+	      ))
+  (add-hook mode (lambda () (display-line-numbers-mode 0)
+		   )))
+
+;; Copy & Paste & Cut Key-Bindings
+(cua-mode t)
+
+;; ctrl-a mark buf
+(global-set-key (kbd "C-a") 'mark-whole-buffer)
+
+;; No region when it is not highlighted
+(transient-mark-mode 1)
+
+;; <ESC> quit prompts
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+
+;; Font
+;;(set-face-attribute 'default nil :font "Fira Code")
+
+;;
+;; Package Sources
+;;
+(require 'package)
+
+(setq package-archives '(("melpa-stable" . "https://stable.melpa.org/packages/")
+			("melpa" . "https://melpa.org/packages/")
+			 ("elpa" . "https://elpa.gnu.org/packages/")
+			 ))
+
+(package-initialize)
+(unless package-archive-contents
+  (package-refresh-contents))
+
+;; initialize use-package on non-linux
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t)
+;;
+;; END PACKAGE SOURCES END
+;;
+
+;; Theme
+(use-package doom-themes
+  :config
+  (load-theme 'doom-acario-dark t)
+
+  ;; Buffer background
+  (set-background-color "#000000")
+
+  ;; Modeline
+  (face-remap-add-relative 'mode-line :background "#0D0D0D")
+
+  ;;Lne-Numbers
+  ;;  (line-number              (:foreground gruvbox-dark2 :background gruvbo>
+  ;;(line-number-current-line (:foreground gruvbox-faded_yellow :background>
+  )
+
+;; Fira Code Font
+(use-package fira-code-mode
+  :config
+  (global-fira-code-mode)
+  )
+
+;; Eglot for LSP,Go,etc
+(use-package eglot
+  :config
+  (add-hook 'prog-mode-hook 'eglot-ensure)
+  )
+
+;; Company for autocompletion
+(use-package company
+  :config
+  (add-hook 'prog-mode-hook 'company-mode)
+  )
+
+(use-package go-mode
+  :config
+  (autoload 'go-mode "go-mode" nil t)
+  (add-to-list 'auto-mode-alist '("\\.go\\'" . go-mode))
+  (add-hook 'before-save-hook 'eglot-format-buffer)
+  )
+
+;;    With autocomplete-mode: go-autocomplete
+;;    Standalone completion: go-complete
+
+;; Rainbow delimiters
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode)
+  )
+
+;; Hydra
+(use-package hydra
+  :defer t
+  )
+
+;; Treemacs
+;;(use-package treemacs
+;;  :ensure t
+;;  :defer t
+;;  :hook  (emacs-startup . treemacs)
+;;  )
+
+;;(use-package treemacs-nerd-icons
+;;  :after treemacs
+;;  :config
+;;  (treemacs-load-theme "nerd-icons")
+;;  )
+
+;; Treemacs Icons
+;;(use-package all-the-icons
+;;  :if (display-graphic-p)
+;;  :config
+;;  (setq inhibit-compacting-font-caches t)
+;;  )
+
+;;(use-package projectile
+;;  :config
+;;  (add-hook 'prog-mode-hook 'projectile-mode)
+;;  )
+
+;;(use-package treemacs-projectile
+;;  :after (treemacs projectile)
+;;  :ensure t
+;;)
+
+;; Doom modeline
+(use-package doom-modeline
+  :ensure t
+  :init
+  (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-height 15)
+  )
+
+;; Custom Startpage
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-startup-banner '4)
+  )
+
+(use-package markdown-mode
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown")
+  :config
+  ;; JSON mode
+  (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.jsonc$" . js-mode))
+  )
+
+;;
+;; END OF CONFIG
+;;
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(markdown-mode dashboard doom-modeline treemacs-projectile projectile all-the-icons treemacs-nerd-icons treemacs hydra rainbow-delimiters go-mode company fira-code-mode doom-themes)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

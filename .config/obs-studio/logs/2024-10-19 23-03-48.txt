@@ -1,0 +1,150 @@
+23:03:48.536: Platform: Wayland
+23:03:48.536: CPU Name: Intel(R) Celeron(R) N4120 CPU @ 1.10GHz
+23:03:48.536: CPU: Missing /var/run/dmesg.boot !
+23:03:48.536: Physical Cores: 4, Logical Cores: 4
+23:03:48.539: Physical Memory: 7697MB Total, 6285MB Free
+23:03:48.539: Kernel Version: FreeBSD 14.1-STABLE-HBSD
+23:03:48.539: Distribution: HardenedBSD "14.1"
+23:03:48.539: Desktop Environment: Hyprland
+23:03:48.539: Session Type: wayland
+23:03:48.548: Qt Version: 6.7.2 (runtime), 6.7.2 (compiled)
+23:03:48.548: Portable mode: false
+23:03:48.682: OBS 30.1.2 (freebsd)
+23:03:48.682: ---------------------------------
+23:03:48.684: ---------------------------------
+23:03:48.684: audio settings reset:
+23:03:48.684: 	samples per sec: 48000
+23:03:48.684: 	speakers:        2
+23:03:48.684: 	max buffering:   960 milliseconds
+23:03:48.684: 	buffering type:  dynamically increasing
+23:03:48.801: ---------------------------------
+23:03:48.801: Initializing OpenGL...
+23:03:48.801: Using EGL/Wayland
+23:03:49.343: Initialized EGL 1.5
+23:03:49.391: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 600 (GLK 2)
+23:03:49.391: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 24.0.9, shading language 4.60
+23:03:49.910: ---------------------------------
+23:03:49.910: video settings reset:
+23:03:49.910: 	base resolution:   1920x1080
+23:03:49.910: 	output resolution: 1280x720
+23:03:49.910: 	downscale filter:  Bicubic
+23:03:49.910: 	fps:               30/1
+23:03:49.910: 	format:            NV12
+23:03:49.910: 	YUV mode:          Rec. 709/Partial
+23:03:49.911: NV12 texture support enabled
+23:03:49.911: P010 texture support not available
+23:03:49.935: Audio monitoring device:
+23:03:49.935: 	name: Default
+23:03:49.935: 	id: default
+23:03:49.936: ---------------------------------
+23:03:51.664: [pipewire] No captures available
+23:03:51.739: v4l2loopback not installed, virtual camera disabled
+23:03:54.039: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): Shared object "libnvidia-encode.so.1" not found, required by "obs"
+23:03:54.039: 
+23:03:54.121: VAAPI: API version 1.22
+23:03:54.122: FFmpeg VAAPI H264 encoding supported
+23:03:54.124: FFmpeg VAAPI AV1 encoding not supported
+23:03:54.125: FFmpeg VAAPI HEVC encoding supported
+23:03:55.384: [obs-websocket] [obs_module_load] you can haz websockets (Version: 5.4.2 | RPC Version: 1)
+23:03:55.384: [obs-websocket] [obs_module_load] Qt version (compile-time): 6.7.2 | Qt version (run-time): 6.7.2
+23:03:55.384: [obs-websocket] [obs_module_load] Linked ASIO Version: 102800
+23:03:55.384: [obs-websocket] [Config::Load] (FirstLoad) Generating new server password.
+23:03:55.403: [obs-websocket] [obs_module_load] Module loaded.
+23:03:55.510: [rtmp-services plugin] Remote update of URL "https://obsproject.com/obs2_update/rtmp-services/v5/package.json" failed: Could not resolve host: obsproject.com
+23:03:55.708: [vlc-video]: VLC 3.0.21 Vetinari found, VLC video source enabled
+23:03:55.709: ---------------------------------
+23:03:55.709:   Loaded Modules:
+23:03:55.709:     vlc-video.so
+23:03:55.709:     text-freetype2.so
+23:03:55.709:     sndio.so
+23:03:55.709:     rtmp-services.so
+23:03:55.709:     oss-audio.so
+23:03:55.709:     obs-x264.so
+23:03:55.709:     obs-websocket.so
+23:03:55.709:     obs-webrtc.so
+23:03:55.709:     obs-transitions.so
+23:03:55.709:     obs-outputs.so
+23:03:55.709:     obs-filters.so
+23:03:55.709:     obs-ffmpeg.so
+23:03:55.709:     linux-v4l2.so
+23:03:55.709:     linux-pulseaudio.so
+23:03:55.709:     linux-pipewire.so
+23:03:55.709:     linux-jack.so
+23:03:55.709:     linux-capture.so
+23:03:55.709:     image-source.so
+23:03:55.710:     frontend-tools.so
+23:03:55.710: ---------------------------------
+23:03:55.710: ==== Startup complete ===============================================
+23:03:55.729: No scene file found, creating default scene
+23:03:55.796: All scene data cleared
+23:03:55.796: ------------------------------------------------
+23:03:55.825: Switched to scene 'Scene'
+23:03:55.825: Failed to glob scene collections
+23:03:56.068: [twitch ingest update] Remote update of URL "https://ingest.twitch.tv/ingests" failed: Could not resolve host: ingest.twitch.tv
+23:24:43.025: Creating a popup with a parent, QWidgetWindow(0x1ec29178520, name="OBSBasicWindow") which does not match the current topmost grabbing popup, QWidgetWindow(0x1ec2fe712c0, name="QMenuClassWindow") With some shell surface protocols, this is not allowed. The wayland QPA plugin is currently handling it by setting the parent to the topmost grabbing popup. Note, however, that this may cause positioning errors and popups closing unxpectedly. Please fix the transient parent of the popup.
+23:25:12.891: User added source 'VLC Video Source' (vlc_source) to scene 'Scene'
+23:25:55.801: User Removed source 'VLC Video Source' (vlc_source) from scene 'Scene'
+23:26:32.465: ==== Shutting down ==================================================
+23:26:32.512: All scene data cleared
+23:26:32.512: ------------------------------------------------
+23:26:32.605: [obs-websocket] [obs_module_unload] Shutting down...
+23:26:32.606: Tried to call obs_frontend_remove_event_callback with no callbacks!
+23:26:32.606: [obs-websocket] [obs_module_unload] Finished shutting down.
+23:26:32.659: [Scripting] Total detached callbacks: 0
+23:26:32.660: Freeing OBS context data
+23:26:32.773: == Profiler Results =============================
+23:26:32.777: run_program_init: 7740.13 ms
+23:26:32.777:  ┣OBSApp::AppInit: 19.143 ms
+23:26:32.778:  ┃ ┗OBSApp::InitLocale: 3.626 ms
+23:26:32.778:  ┗OBSApp::OBSInit: 7501.42 ms
+23:26:32.778:    ┣obs_startup: 11.744 ms
+23:26:32.778:    ┗OBSBasic::OBSInit: 7354.22 ms
+23:26:32.778:      ┣OBSBasic::InitBasicConfig: 1.06 ms
+23:26:32.778:      ┣OBSBasic::ResetAudio: 0.65 ms
+23:26:32.779:      ┣OBSBasic::ResetVideo: 1250.67 ms
+23:26:32.779:      ┃ ┗obs_init_graphics: 1225.3 ms
+23:26:32.779:      ┃   ┗shader compilation: 515.977 ms
+23:26:32.779:      ┣OBSBasic::InitOBSCallbacks: 0.009 ms
+23:26:32.779:      ┣OBSBasic::InitHotkeys: 0.045 ms
+23:26:32.779:      ┣obs_load_all_modules2: 5773.12 ms
+23:26:32.780:      ┃ ┣obs_init_module(frontend-tools.so): 320.406 ms
+23:26:32.780:      ┃ ┣obs_init_module(image-source.so): 0.06 ms
+23:26:32.780:      ┃ ┣obs_init_module(linux-capture.so): 0.001 ms
+23:26:32.780:      ┃ ┣obs_init_module(linux-jack.so): 0.009 ms
+23:26:32.780:      ┃ ┣obs_init_module(linux-pipewire.so): 49.733 ms
+23:26:32.780:      ┃ ┣obs_init_module(linux-pulseaudio.so): 0.01 ms
+23:26:32.780:      ┃ ┣obs_init_module(linux-v4l2.so): 3.905 ms
+23:26:32.781:      ┃ ┣obs_init_module(obs-ffmpeg.so): 95.457 ms
+23:26:32.781:      ┃ ┃ ┗nvenc_check: 1.234 ms
+23:26:32.781:      ┃ ┣obs_init_module(obs-filters.so): 0.155 ms
+23:26:32.781:      ┃ ┣obs_init_module(obs-outputs.so): 0.018 ms
+23:26:32.781:      ┃ ┣obs_init_module(obs-transitions.so): 0.064 ms
+23:26:32.781:      ┃ ┣obs_init_module(obs-webrtc.so): 0.332 ms
+23:26:32.782:      ┃ ┣obs_init_module(obs-websocket.so): 19.114 ms
+23:26:32.782:      ┃ ┣obs_init_module(obs-x264.so): 0.009 ms
+23:26:32.782:      ┃ ┣obs_init_module(oss-audio.so): 0.053 ms
+23:26:32.782:      ┃ ┣obs_init_module(rtmp-services.so): 0.54 ms
+23:26:32.782:      ┃ ┣obs_init_module(sndio.so): 0.089 ms
+23:26:32.782:      ┃ ┣obs_init_module(text-freetype2.so): 0.215 ms
+23:26:32.782:      ┃ ┗obs_init_module(vlc-video.so): 117.038 ms
+23:26:32.783:      ┣OBSBasic::InitService: 8.266 ms
+23:26:32.783:      ┣OBSBasic::ResetOutputs: 0.599 ms
+23:26:32.783:      ┣OBSBasic::CreateHotkeys: 0.099 ms
+23:26:32.783:      ┣OBSBasic::InitPrimitives: 0.285 ms
+23:26:32.783:      ┗OBSBasic::Load: 95.877 ms
+23:26:32.783: obs_hotkey_thread(25 ms): min=0 ms, median=0.001 ms, max=0.118 ms, 99th percentile=0.003 ms, 100% below 25 ms
+23:26:32.784: audio_thread(Audio): min=0.012 ms, median=0.028 ms, max=7.208 ms, 99th percentile=0.125 ms
+23:26:32.784: obs_graphics_thread(33.3333 ms): min=0.053 ms, median=0.617 ms, max=180.204 ms, 99th percentile=37.289 ms, 98.9718% below 33.333 ms
+23:26:32.784:  ┣tick_sources: min=0 ms, median=0.01 ms, max=0.267 ms, 99th percentile=0.029 ms
+23:26:32.784:  ┣output_frame: min=0.026 ms, median=0.216 ms, max=76.081 ms, 99th percentile=0.534 ms
+23:26:32.784:  ┃ ┗gs_context(video->graphics): min=0.025 ms, median=0.213 ms, max=75.895 ms, 99th percentile=0.53 ms
+23:26:32.784:  ┃   ┣render_video: min=0.009 ms, median=0.035 ms, max=0.748 ms, 99th percentile=0.105 ms
+23:26:32.785:  ┃   ┃ ┗render_main_texture: min=0.007 ms, median=0.03 ms, max=0.61 ms, 99th percentile=0.091 ms
+23:26:32.785:  ┃   ┗gs_flush: min=0.002 ms, median=0.12 ms, max=75.77 ms, 99th percentile=0.422 ms
+23:26:32.785:  ┗render_displays: min=0.012 ms, median=0.369 ms, max=179.588 ms, 99th percentile=36.675 ms
+23:26:32.785: =================================================
+23:26:32.785: == Profiler Time Between Calls ==================
+23:26:32.785: obs_hotkey_thread(25 ms): min=25.008 ms, median=25.016 ms, max=1097.05 ms, 99.9118% within ±2% of 25 ms (0% lower, 0.0881753% higher)
+23:26:32.786: obs_graphics_thread(33.3333 ms): min=0.141 ms, median=33.129 ms, max=1098.42 ms, 53.1888% within ±2% of 33.333 ms (20.8771% lower, 25.9341% higher)
+23:26:32.786: =================================================
+23:26:32.899: Number of memory leaks: 0

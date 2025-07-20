@@ -1,0 +1,37 @@
+{
+ "Week": "2024-12-02",
+ "LastWeek": "",
+ "X": 0.28221799473945963,
+ "Programs": [
+  {
+   "Program": "golang.org/x/tools/gopls",
+   "Version": "devel",
+   "GoVersion": "go1.21.13",
+   "GOOS": "freebsd",
+   "GOARCH": "amd64",
+   "Counters": {
+    "gopls/client:other": 7,
+    "gopls/completion/latency:\u003c100ms": 2,
+    "gopls/completion/latency:\u003c10ms": 194,
+    "gopls/completion/latency:\u003c200ms": 1,
+    "gopls/completion/latency:\u003c500ms": 1,
+    "gopls/completion/latency:\u003c50ms": 15,
+    "gopls/completion/latency:\u003c5s": 1,
+    "gopls/completion/len:0": 143,
+    "gopls/completion/len:\u003c=10": 56,
+    "gopls/completion/len:\u003e10": 15,
+    "gopls/completion/used:no": 71,
+    "gopls/completion/used:yes": 6,
+    "gopls/gotoolchain:auto": 7,
+    "gopls/goversion:1.21": 7,
+    "gopls/hover/error-latency:\u003c10ms": 2,
+    "gopls/hover/latency:\u003c10ms": 431,
+    "gopls/telemetryprompt/attempts:0": 7
+   },
+   "Stacks": {
+    "gopls/bug\ngolang.org/x/tools/gopls/internal/util/bug.report:+35\ngolang.org/x/tools/gopls/internal/util/bug.Errorf:+2\ngolang.org/x/tools/gopls/internal/golang.hover:+224\ngolang.org/x/tools/gopls/internal/golang.Hover:+4\ngolang.org/x/tools/gopls/internal/server.(*server).Hover:+30\ngolang.org/x/tools/gopls/internal/protocol.serverDispatch:+335\ngolang.org/x/tools/gopls/internal/lsprpc.(*streamServer).ServeStream.ServerHandler.func3:+5\ngolang.org/x/tools/gopls/internal/lsprpc.(*streamServer).ServeStream.handshaker.func4:+52\ngolang.org/x/tools/gopls/internal/protocol.Handlers.MustReplyHandler.func1:+2\ngolang.org/x/tools/gopls/internal/protocol.Handlers.AsyncHandler.func2.2:+3\nruntime.goexit:+0": 1
+   }
+  }
+ ],
+ "Config": "v0.0.0-0"
+}

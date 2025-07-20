@@ -1,0 +1,29 @@
+{
+ "Week": "2024-10-28",
+ "LastWeek": "",
+ "X": 0.12366066326439129,
+ "Programs": [
+  {
+   "Program": "golang.org/x/tools/gopls",
+   "Version": "devel",
+   "GoVersion": "go1.21.12",
+   "GOOS": "freebsd",
+   "GOARCH": "amd64",
+   "Counters": {
+    "gopls/client:other": 10,
+    "gopls/completion/latency:\u003c100ms": 1,
+    "gopls/completion/latency:\u003c10ms": 716,
+    "gopls/completion/latency:\u003c1s": 5,
+    "gopls/completion/latency:\u003c200ms": 9,
+    "gopls/completion/latency:\u003c50ms": 146,
+    "gopls/goversion:1.21": 10,
+    "gopls/hover/error-latency:\u003c10ms": 14,
+    "gopls/hover/latency:\u003c10ms": 2079
+   },
+   "Stacks": {
+    "gopls/bug\ngolang.org/x/tools/gopls/internal/util/bug.report:+35\ngolang.org/x/tools/gopls/internal/util/bug.Errorf:+2\ngolang.org/x/tools/gopls/internal/golang.hover:+142\ngolang.org/x/tools/gopls/internal/golang.Hover:+4\ngolang.org/x/tools/gopls/internal/server.(*server).Hover:+19\ngolang.org/x/tools/gopls/internal/protocol.serverDispatch:+335\ngolang.org/x/tools/gopls/internal/lsprpc.(*streamServer).ServeStream.ServerHandler.func3:+5\ngolang.org/x/tools/gopls/internal/lsprpc.(*streamServer).ServeStream.handshaker.func4:+52\ngolang.org/x/tools/gopls/internal/protocol.Handlers.MustReplyHandler.func1:+2\ngolang.org/x/tools/gopls/internal/protocol.Handlers.AsyncHandler.func2.2:+3\nruntime.goexit:+0": 1
+   }
+  }
+ ],
+ "Config": ""
+}
