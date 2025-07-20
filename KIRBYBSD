@@ -5,7 +5,7 @@
 include HARDENEDBSD
 include "../../conf/std.nodebug"
 
-ident		HARDENEDBSD-NODEBUG
+ident		KIRBYBSD
 
 options 	PAX_INSECURE_MODE
 options		RACCT
