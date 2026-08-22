@@ -1,35 +1,48 @@
 ;; ~/.emacs.d/init.el
+
 ;; Todo: bind: compile
+
+;;
+;; Startup performance
+;;
+
+;; faster GC for startup
+(setq gc-cons-threshold (* 64 1024 1024))
+(add-hook 'emacs-startup-hook
+          (lambda () (setq gc-cons-threshold (* 16 1024 1024))))
 
 ;;
 ;; Some Settings
 ;;
+
 (setq
- inhibit-startup-message t ; no motd
- ring-bell-function 'ignore ; Quiet
- scroll-margin 1 ; Space between cursor and top/bottom
+ inhibit-startup-message t   ; no motd
+ ring-bell-function 'ignore  ; Quiet
+ scroll-margin 1             ; Space between cursor and top/bottom
  initial-scratch-message nil ; clean scratch buf
- create-lockfiles nil ; Disable lockfiles
- echo-keystrokes 0.1 ; Show keystrokes asap
- auto-revert-interval 1 ; Refresh buffers fast
+ create-lockfiles nil        ; Disable lockfiles
+ echo-keystrokes 0.1         ; Show keystrokes asap
+ auto-revert-interval 1      ; Refresh buffers fast
  )
 
 ;; (desktop-save-mode)
+(scroll-bar-mode -1)   ; scrollbar
+(tool-bar-mode -1)     ; toolbar
+(menu-bar-mode -1)     ; menubar
+(blink-cursor-mode 0)  ; solid cursor
 
-(scroll-bar-mode -1) ; scrollbar
-(tool-bar-mode -1) ; toolbar
-(menu-bar-mode -1) ; menubar
-(blink-cursor-mode 0) ; solid cursor
+;; Klammern/Anfuehrungszeichen automatisch schliessen: ( setzt sofort )
+(electric-pair-mode 1)
 
 (set-language-environment "UTF-8")
 (prefer-coding-system 'utf-8)
 
 (setq-default
- tab-width 4 ; smaller tabs
- truncate-lines t ; dont fold lines
- indent-tabs-mode nil ; spaces instead of tabs
- frame-resize-pixelwise t ; Fine-grained frame resize
- sentence-end-double-space nil ; No double space
+ tab-width 4                    ; smaller tabs
+ truncate-lines t                ; dont fold lines
+ indent-tabs-mode nil             ; spaces instead of tabs
+ frame-resize-pixelwise t         ; Fine-grained frame resize
+ sentence-end-double-space nil    ; No double space
  )
 
 ;; Line Nums
@@ -39,23 +52,24 @@
 
 ;; disable line-numbers for some modes
 (dolist (mode '(org-mode-hook
-              term-mode-hook
-              shell-mode-hook
-              treemacs-mode-hook
-              eshell-mode-hook
-              neotree-mode-hook
-              ))
-  (add-hook mode (lambda () (display-line-numbers-mode 0)
-                   )))
-;; ??
-(transient-mark-mode 1) ; No Region when it is not highlighted
+                term-mode-hook
+                shell-mode-hook
+                treemacs-mode-hook
+                eshell-mode-hook
+                neotree-mode-hook
+                vterm-mode-hook
+                ))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+;; No Region when it is not highlighted
+(transient-mark-mode 1) 
 
 ;; autosave Directory
 (defvar emacs-autosave-directory
   (concat user-emacs-directory "autosaves/")
   "This variable dictates where to put auto saves. It is set to a
-  directory called autosaves located wherever your .emacs.d/ is
-  located.")
+directory called autosaves located wherever your .emacs.d/ is
+located.")
 
 (setq
  backup-directory-alist
@@ -64,36 +78,36 @@
  `((".*" ,emacs-autosave-directory t))
  )
 
-
 ;;
 ;; Key Settings
 ;;
-(global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; ESC quit
-(cua-mode t) ; Copy & Paste & Cut Key-Bindings
-(global-set-key (kbd "C-a") 'mark-whole-buffer) ; CTRL-A mark Buffer
 
+(global-set-key (kbd "<escape>") 'keyboard-escape-quit) ; ESC quit
+(cua-mode t)                                            ; Copy & Paste & Cut Key-Bindings
+(global-set-key (kbd "C-a") 'mark-whole-buffer)          ; CTRL-A mark Buffer
 
 ;;
 ;; Package Management
 ;;
+
 (setq package-archives
       '(
-	("GNU ELPA" . "https://elpa.gnu.org/packages/")
-	("MELPA STABLE" . "https://stable.melpa.org/packages/")
-	("MELPA" . "https://melpa.org/packages/")
-	)
+        ("GNU ELPA" . "https://elpa.gnu.org/packages/")
+        ("MELPA STABLE" . "https://stable.melpa.org/packages/")
+        ("MELPA" . "https://melpa.org/packages/")
+        )
       )
+
 (setq package-archive-priorities
       '(
-	("GNU ELPA" . 10)
-	("MELPA" . 5)
-	("MELPA STABLE" . 0)
-	)
+        ("GNU ELPA" . 10)
+        ("MELPA" . 5)
+        ("MELPA STABLE" . 0)
+        )
       )
+
 (require 'package)
-
 (setq package-install-upgrade-built-in t)
-
 (package-initialize)
 
 (unless package-archive-contents
@@ -105,7 +119,6 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-
 ;;
 ;; Theme
 ;;
@@ -113,12 +126,12 @@
 ;; Transparency
 (set-face-attribute 'default nil :height 100)
 (set-frame-parameter nil 'alpha-background 90)
+(add-to-list 'default-frame-alist '(alpha-background . 90))
 
 (use-package modus-themes
   :ensure t
   :init
   (require-theme 'modus-themes)
-
   :custom
   (modus-themes-italic-constructs t)
   (modus-themes-bold-constructs t)
@@ -130,43 +143,34 @@
   (modus-themes-completions
    '((matches . (extrabold))
      (selection . (semibold italic text-also))))
-
   (modus-themes-org-blocks 'gray-background)
-
   (modus-themes-headings
    '((1 . (variable-pitch 1.5))
      (2 . (1.3))
      (agenda-date . (1.3))
      (agenda-structure . (variable-pitch light 1.8))
      (t . (1.1))))
-
-
   (modus-vivendi-palette-overrides
    '(
-
-     (bg-main     "#000000")
-     (bg-dim      "#111111")
-     (bg-active   "#222222")
+     (bg-main "#000000")
+     (bg-dim "#111111")
+     (bg-active "#222222")
      (bg-inactive "#333333")
-
-     (fg-main     "#ffffff")
-     (fg-dim      )
-
-     (cursor      "#00ffff")
-     (warning     "#fafad2")
-
+     (fg-main "#ffffff")
+     (fg-dim)
+     (cursor "#00ffff")
+     (warning "#fafad2")
      (bg-completion "#2e8b57")
-     (bg-region     bg-active)
-     (bg-tab-bar        bg-main)
-     (bg-tab-current    bg-active)
-     (bg-tab-other      bg-dim)
+     (bg-region bg-active)
+     (bg-tab-bar bg-main)
+     (bg-tab-current bg-active)
+     (bg-tab-other bg-dim)
      (fringe unspecified)
      (bg-mode-line-active bg-dim)
      (border-mode-line-active unspecified)
-     (bg-line-number-active  bg-main)
-     (bg-line-number-inactive  bg-main)
+     (bg-line-number-active bg-main)
+     (bg-line-number-inactive bg-main)
      ))
-
   :config
   (load-theme 'modus-vivendi t)
   )
@@ -176,15 +180,15 @@
   :ensure t
   :config
   (ligature-set-ligatures 't '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-                                     ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-                                     "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-                                     "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-                                     "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-                                     "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-                                     "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-                                     "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-                                     "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-                                     "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+                               ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+                               "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+                               "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+                               "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+                               "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+                               "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+                               "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+                               "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+                               "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
   (global-ligature-mode 't)
   (set-face-attribute 'default nil :font "Fira Code")
   )
@@ -196,19 +200,15 @@
   (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
 
-
 ;;(use-package nano-modeline
 ;;  :init
 ;;  (setq-default mode-line-format nil) ; Disable the default modeline
-
 ;;  :config
-;;  (add-hook 'prog-mode-hook            #'nano-modeline-prog-mode)
-;;  (add-hook 'text-mode-hook            #'nano-modeline-text-mode)
+;;  (add-hook 'prog-mode-hook #'nano-modeline-prog-mode)
+;;  (add-hook 'text-mode-hook #'nano-modeline-text-mode)
 ;;  )
-
 ;;(setq nano-font-family-monospaced "Roboto Mono")
 ;;(setq nano-font-size 14)
-
 
 ;;
 ;; Modes
@@ -219,8 +219,8 @@
   :ensure t
   :defer t
   :hook (eglot-managed-mode . (lambda ()
-                                ;;(eglot-inlay-hints-mode -1)
-                                (add-hook 'before-save-hook 'eglot-format nil t)))
+                                 ;;(eglot-inlay-hints-mode -1)
+                                 (add-hook 'before-save-hook 'eglot-format nil t)))
   :config
   (setq eglot-events-buffer-size 0)
   (add-hook 'prog-mode-hook 'eglot-ensure)
@@ -229,10 +229,17 @@
 ;; auto-completion
 (use-package company
   :ensure t
+  :init (add-hook 'after-init-hook 'global-company-mode)
+  :bind (:map company-active-map
+              ("TAB" . company-complete-selection)
+              ("<tab>" . company-complete-selection))
   :config
   (global-company-mode)
-  ;; bind: tab => (company-complete)
+  
   )
+
+;(setq company-minimum-prefix-length 1
+;      company-idle-delay 0.0)
 
 ;; Markdown
 (use-package markdown-mode
@@ -247,8 +254,8 @@
 (use-package json-mode
   :ensure t
   :mode
-    ("\\.json$" . json-mode)
-    ("\\.jsonc$" . json-mode)
+  ("\\.json$" . json-mode)
+  ("\\.jsonc$" . json-mode)
   )
 
 ;; Golang
@@ -256,20 +263,29 @@
   :ensure t
   :defer t
   :mode "\\.go\\'"
-  :hook (go-mode . eglot-ensure)
+  :hook ((go-mode . eglot-ensure)
+         ;; buffer-local, statt global in before-save-hook zu haengen –
+         ;; sonst versucht JEDER Buffer beim Speichern eglot-format-buffer
+         ;; aufzurufen, auch ohne aktives Eglot.
+         (go-mode . (lambda ()
+                      (add-hook 'before-save-hook 'eglot-format-buffer nil t))))
   :config
   (autoload 'go-mode "go-mode" nil t)
-  (add-hook 'before-save-hook 'eglot-format-buffer)
   ;;:bind
   ;; ("C-c C-c" . ) ;; => go build/run .
   )
 
 ;; Python
-(use-package python-mode
-  :ensure t
+(use-package python
+  :ensure nil
   :hook (python-mode . (lambda () (setq forward-sexp-function nil)))
   :config
-  (setq python-shell-interpreter "python3.11")
+  ;; nicht auf eine feste Minor-Version pinnen (fragil bei Port-Upgrades),
+  ;; sondern das erste passende Interpreter-Binary im PATH nehmen.
+  (setq python-shell-interpreter
+        (or (executable-find "python3")
+            (executable-find "python")
+            "python3"))
   )
 
 ;; Parethses
@@ -287,7 +303,6 @@
 ;;  (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 ;;  )
 
-
 ;;
 ;; Plugins
 ;;
@@ -298,14 +313,23 @@
   (setq auto-package-update-hide-results t)
   (auto-package-update-maybe))
 
+
+(use-package auto-package-update
+  :config
+  (setq auto-package-update-delete-old-versions t)
+  (setq auto-package-update-hide-results t)
+  ;; do not block
+  (run-with-idle-timer 5 nil #'auto-package-update-maybe)
+  )
+
 ;; Dashboard
 (defun my/dashboard-banner ()
-  """Set a dashboard banner including information on package initialization
-   time and garbage collections."""
+  "Set a dashboard banner including information on package initialization
+time and garbage collections."
   (setq dashboard-banner-logo-title
         (format "Loaded in %.2f seconds with %d garbage collections."
                 (float-time (time-subtract after-init-time before-init-time)) gcs-done)
-	)
+        )
   )
 
 (use-package dashboard
@@ -313,30 +337,29 @@
   :init
   (add-hook 'after-init-hook 'dashboard-refresh-buffer)
   (add-hook 'dashboard-mode-hook 'my/dashboard-banner)
-  
   :config
   (setq dashboard-startup-banner 4) ; banner
   (setq dashboard-center-content t) ; center content
-
-  (setq dashboard-items '((recents   . 5)
-                        (bookmarks . 5)
-                        (projects  . 5)))
-
+  (setq dashboard-items '((recents . 5)
+                           (bookmarks . 5)
+                           (projects . 5)))
   ;; nerd-icons
   (setq dashboard-display-icons-p t)     ; display icons on both GUI and terminal
   (setq dashboard-icon-type 'nerd-icons) ; use `nerd-icons' package
-
   (setq dashboard-startupify-list '(dashboard-insert-banner
-                                    dashboard-insert-newline
-				    dashboard-insert-footer
-				    dashboard-insert-banner-title
-				    dashboard-insert-navigator
-				    dashboard-insert-items
-				    dashboard-insert-newline
-				    )
-	)
+                                     dashboard-insert-newline
+                                     dashboard-insert-footer
+                                     dashboard-insert-banner-title
+                                     dashboard-insert-navigator
+                                     dashboard-insert-items
+                                     dashboard-insert-newline
+                                     )
+        )
   (dashboard-setup-startup-hook)
   )
+
+   (recentf-mode 1)
+   (setq recentf-max-saved-items 500)
 
 ;; Ivy completion
 (use-package counsel
@@ -373,11 +396,12 @@
   (keymap-set minibuffer-local-map "C-r" #'counsel-minibuffer-history)
   )
 
+(savehist-mode 1)
+
 ;; Magit
 (use-package magit
   :ensure t
   )
-
 
 ;; NeoTree
 ;;(use-package neotree
@@ -394,42 +418,29 @@
   :init
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :hook  (emacs-startup . treemacs)
+  :hook (emacs-startup . treemacs)
   :config
   (progn
-    (setq treemacs-display-in-side-window          t
-
-          treemacs-follow-after-init               t
-          treemacs-expand-after-init               t
-
-          treemacs-hide-dot-git-directory          t
-          
-          treemacs-indentation                     2
-          treemacs-indentation-string              " "
-
-          treemacs-is-never-other-window           nil
-
-          treemacs-move-files-by-mouse-dragging    t
-
-          treemacs-persist-file                    (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
-
-          treemacs-position                        'left
-
-          treemacs-litter-directories              '("/node_modules" "/.venv" "/.cask")
-
-          treemacs-show-cursor                     nil
-
-          treemacs-show-hidden-files               t
-
-          treemacs-sorting                         'alphabetic-asc
+    (setq treemacs-display-in-side-window t
+          treemacs-follow-after-init t
+          treemacs-expand-after-init t
+          treemacs-hide-dot-git-directory t
+          treemacs-indentation 2
+          treemacs-indentation-string " "
+          treemacs-is-never-other-window nil
+          treemacs-move-files-by-mouse-dragging t
+          treemacs-persist-file (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+          treemacs-position 'left
+          treemacs-litter-directories '("/node_modules" "/.venv" "/.cask")
+          treemacs-show-cursor nil
+          treemacs-show-hidden-files t
+          treemacs-sorting 'alphabetic-asc
           treemacs-select-when-already-in-treemacs 'move-back
-          treemacs-space-between-root-nodes        t
-
-          treemacs-width                           35
-          treemacs-width-increment                 1
-          treemacs-width-is-initially-locked       t
-
-          treemacs-workspace-switch-cleanup        nil
+          treemacs-space-between-root-nodes t
+          treemacs-width 35
+          treemacs-width-increment 1
+          treemacs-width-is-initially-locked t
+          treemacs-workspace-switch-cleanup nil
           )
 
     ;; The default width and height of the icons is 22 pixels. If you are
@@ -437,25 +448,24 @@
     ;;(treemacs-resize-icons 44)
 
     ;; treemacs,treemacs-select-window, treemacs-add-and-display-current-project
-    ;; treemacs-indent-guide-mode;;  = line
- 
+    ;; treemacs-indent-guide-mode;; = line
+
     (treemacs-follow-mode t)
     (treemacs-filewatch-mode t)
     (treemacs-fringe-indicator-mode 'always)
     (treemacs-git-mode 'deferred)
     ;; (treemacs-hide-gitignored-files-mode nil)) ??
     )
-
-    :bind (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ("C-x t 1"   . treemacs-delete-other-windows)
-        ("C-x t t"   . treemacs)
-        ("C-x t d"   . treemacs-select-directory)
-        ("C-x t B"   . treemacs-bookmark)
-        ("C-x t C-t" . treemacs-find-file)
-        ("C-x t M-t" . treemacs-find-tag)
-        )
-    )
+  :bind (:map global-map
+              ("M-0" . treemacs-select-window)
+              ("C-x t 1" . treemacs-delete-other-windows)
+              ("C-x t t" . treemacs)
+              ("C-x t d" . treemacs-select-directory)
+              ("C-x t B" . treemacs-bookmark)
+              ("C-x t C-t" . treemacs-find-file)
+              ("C-x t M-t" . treemacs-find-tag)
+              )
+  )
 
 (use-package treemacs-nerd-icons
   :ensure t
@@ -463,7 +473,7 @@
   :config
   (treemacs-load-theme "nerd-icons")
   )
-  
+
 (use-package treemacs-projectile
   :after (treemacs projectile)
   :ensure t
@@ -513,11 +523,15 @@
   )
 
 ;; Terminal via libvterm
+;; C-c t  =>  neues vterm-Terminal oeffnen
 (use-package vterm
   :ensure t
+  :bind ("M-RET" . vterm)
   )
 
+
 ;; END OF FILE
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -525,8 +539,8 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0"
-     default))
- '(package-selected-packages '(nano-theme transient-posframe)))
+     default)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
