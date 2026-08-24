@@ -18,3 +18,7 @@
 * [harden_shm, disallow_map32bit]
 * `hbsdcontrol pax list`
 * `hbsdcontrol -H -d pax disable feature $(which file)`
+* `hbsdcontrol pax disable insecure_kmod /path/module.ko`
+
+## kern
+* `sysctl hardening.harden_rtld`
