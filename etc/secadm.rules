@@ -1,0 +1,37 @@
+secadm {
+	pax {
+		path: "/usr/local/bin/python3.11",
+		mprotect: false,
+		pageexec: false,
+	},
+
+	pax {
+                path: "/usr/local/lib/firefox/firefox",
+                mprotect: false,
+                pageexec: false,
+        },
+
+	pax {
+                path: "/usr/local/lib/thunderbird/thunderbird",
+                mprotect: false,
+                pageexec: false,
+        },
+
+	pax {
+		path: "/usr/local/bin/pulseaudio",
+		mprotect: false,
+		pageexec: false,
+	},
+
+        pax {
+                path: "/usr/local/libexec/xdg-desktop-portal-hyprland",
+                mprotect: false,
+                pageexec: false,
+        },
+
+	 pax {
+                path: "/usr/local/bin/node",
+                mprotect: false,
+                pageexec: false,
+        },
+}
