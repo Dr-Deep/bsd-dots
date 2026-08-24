@@ -1,18 +1,19 @@
-# ~/.bashrc kirby@bsdlab
+# ~/.bashrc @Dr.Deep
 
 # PROMPT
 PS1='\[\e[0m\]┌─\[\e[0m\][\[\e[0m\]\u\[\e[0m\]@\[\e[0m\]\h\[\e[0m\]]\[\e[0m\]-\[\e[0m\][\[\e[0m\]\w\[\e[0m\]]\n\[\e[0m\]└──╼\[\e[0m\][\[\e[0m\]\$\[\e[0m\]]\[\e[0m\]> \[\e[0m\]'
 
 export PATH=$HOME/.local/bin:$PATH # /usr/local/plan9/bin to your PATH. aber ohne freebsd zeugs nur /usr/local
-export EDITOR="emacs"     # $EDITOR use in terminal
 
-#export TERM="xterm" # compat
+export EDITOR="emacs"     # $EDITOR use Nano in terminal
+
+export TERM="xterm"
 
 # bash completion
 source /usr/local/share/bash-completion/bash_completion.sh 
 
 # Pager
-export PAGER="most"
+#export PAGER=most
 
 # doas
 complete -cf doas
@@ -20,6 +21,9 @@ complete -cf doas
 # rsync
 alias rsync="rsync -v --stats --progress"
 alias cp="rsync -v --stats --progress"
+
+# Server
+#alias hbsdsrv="ssh deep@vmd171781.contaboserver.net"
 
 # Package Management
 alias pkgs="pkg search -o -Q repository"
