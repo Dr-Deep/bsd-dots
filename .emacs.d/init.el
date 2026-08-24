@@ -232,14 +232,21 @@ located.")
   :init (add-hook 'after-init-hook 'global-company-mode)
   :bind (:map company-active-map
               ("TAB" . company-complete-selection)
-              ("<tab>" . company-complete-selection))
-  :config
-  (global-company-mode)
-  
+              ("<tab>" . company-complete-selection)
+              )
+  :config (global-company-mode)
   )
 
-;(setq company-minimum-prefix-length 1
-;      company-idle-delay 0.0)
+                                        ;(setq company-minimum-prefix-length 1
+                                        ; company-idle-delay 0.0)
+
+;; terraform
+(use-package terraform-mode
+  :ensure t
+  :hook (terraform-mode . eglot-ensure)
+  :config (setq terraform-format-on-save t)
+  :mode ("\\.tf$" . terraform-mode)
+  )
 
 ;; Markdown
 (use-package markdown-mode
@@ -539,7 +546,8 @@ time and garbage collections."
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("de8f2d8b64627535871495d6fe65b7d0070c4a1eb51550ce258cd240ff9394b0"
-     default)))
+     default))
+ '(package-selected-packages nil))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
