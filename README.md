@@ -1,4 +1,5 @@
 # Notes
+* `git clone --recurse-submodules git@github.com:Dr-Deep/dots.git`
 
 ## hexdump
 * `hexdump -v -C /file | less`
